@@ -1,0 +1,241 @@
+#i wanna a make a website but i do not know html, so imma use gpt bhaisahab
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI × Biotech Collective</title>
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --neon: #00ffd5;
+      --pink: #ff4ecd;
+      --green: #5dff7f;
+      --text: #e6e6eb;
+      --muted: #9aa0b3;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #12172a, var(--bg));
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 1;
+      background: linear-gradient(90deg, var(--neon), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 5px var(--neon)); }
+      to { filter: drop-shadow(0 0 20px var(--pink)); }
+    }
+
+    .tagline {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .cta {
+      margin-top: 2.5rem;
+      padding: 1rem 2.5rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--neon), var(--green));
+      color: #000;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: scale(1.08) rotate(-1deg);
+    }
+
+    section {
+      padding: 6rem 8vw;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--neon);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #151b34, #0f1326);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(0,255,213,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .emoji {
+      font-size: 2.2rem;
+    }
+
+    .dna {
+      font-family: monospace;
+      white-space: pre;
+      color: var(--green);
+      animation: float 4s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1>AI × Biotech</h1>
+    <p class="tagline">
+      Where neural networks meet nucleotides.  
+      A student-led collective building the future of intelligence and life.
+    </p>
+    <button class="cta" onclick="scrollToSection()">Enter the Lab 🧪</button>
+  </div>
+</header>
+
+<section id="about">
+  <h2>What Is This?</h2>
+  <p>
+    We are an autonomous university exploring how <strong>artificial intelligence</strong> can
+    decode, design, and enhance <strong>biological systems</strong>.
+    Think algorithms that read DNA, models that predict proteins,
+    and students who refuse to stay in one discipline.
+  </p>
+
+  <div class="dna">
+ATCG → 🧠 → 🧬  
+011010 → LIFE → FUTURE
+  </div>
+</section>
+
+<section>
+  <h2>Why AI × Biotech?</h2>
+
+  <div class="grid">
+    <div class="card">
+      <div class="emoji">🧠</div>
+      <h3>Smarter Biology</h3>
+      <p>Machine learning finds patterns humans can’t see in genomes, cells, and proteins.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🧬</div>
+      <h3>Faster Discovery</h3>
+      <p>Drug discovery, diagnostics, and synthetic biology — accelerated by code.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">⚡</div>
+      <h3>Students First</h3>
+      <p>No gatekeeping. Just curiosity, experiments, and interdisciplinary chaos.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Things We Build</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🧪 AI Drug Screens</h3>
+      <p>Predict molecule-protein interactions using neural networks.</p>
+    </div>
+
+    <div class="card">
+      <h3>📊 Genomic Dashboards</h3>
+      <p>Visualize and analyze DNA/RNA data interactively.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 Bio Chatbots</h3>
+      <p>AI assistants trained on biology textbooks and papers.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Join the Collective</h2>
+  <p>
+    You don’t need to be an expert.  
+    If you like <strong>code</strong>, <strong>cells</strong>, or <strong>chaos</strong>,
+    you belong here.
+  </p>
+
+  <button class="cta">Apply / Join Discord 🚀</button>
+</section>
+
+<footer>
+  Built by students. Powered by curiosity.  
+  © 2025 AI × Biotech Collective
+</footer>
+
+<script>
+  function scrollToSection() {
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>
